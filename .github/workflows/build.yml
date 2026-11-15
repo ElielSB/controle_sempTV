@@ -13,10 +13,10 @@ jobs:
       - name: Baixar código do repositório
         uses: actions/checkout@v4
 
-      - name: Instalar dependências do sistema
+      - name: Instalar dependências essenciais
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential git python3 python3-pip ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev libgstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good zip unzip openjdk-17-jdk autoconf libtool pkg-config libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+          sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev
 
       - name: Instalar Buildozer e Cython
         run: |
@@ -32,4 +32,3 @@ jobs:
         with:
           name: ControleSemp-APK
           path: bin/*.apk
-          
